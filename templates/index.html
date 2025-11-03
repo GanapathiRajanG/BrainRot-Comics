@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainROT Comics - AI Story Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🧠</div>
+                <h1>BrainROT Comics</h1>
+            </div>
+            <p class="tagline">Transform your ideas into imaginative stories with our AI-powered story generator</p>
+        </header>
+
+        <main class="main-content">
+            <section class="input-section">
+                <h2 class="section-title">
+                    <i>📝</i> Your Story Prompt
+                </h2>
+                <form class="prompt-form" id="story-form">
+                    <div class="form-group">
+                        <label for="prompt">Describe your story idea:</label>
+                        <textarea id="prompt" placeholder="Enter a prompt like: 'A robot who falls in love with a human' or 'A magical kingdom hidden in the clouds'..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="genre">Story Genre:</label>
+                        <select id="genre">
+                            <option value="fantasy">Fantasy</option>
+                            <option value="sci-fi">Science Fiction</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="romance">Romance</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="horror">Horror</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="length">Story Length:</label>
+                        <select id="length">
+                            <option value="short">Short (1-2 paragraphs)</option>
+                            <option value="medium">Medium (3-4 paragraphs)</option>
+                            <option value="long">Long (5+ paragraphs)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="controls">
+                        <button type="submit" class="btn-primary">
+                            <i>✨</i> Generate Story
+                        </button>
+                        <button type="button" class="btn-secondary" id="clear-btn">
+                            <i>🗑️</i> Clear
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="examples">
+                    <h3>Try these examples:</h3>
+                    <div class="example-prompts" id="example-prompts">
+                        <!-- Example prompts will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <div class="error-message" id="error-message">
+                    Please enter a story prompt to generate a story.
+                </div>
+            </section>
+            
+            <section class="output-section">
+                <h2 class="section-title">
+                    <i>📖</i> Your Generated Story
+                </h2>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Our AI is crafting your story... This may take a moment.</p>
+                </div>
+                
+                <div class="story-output" id="story-output">
+                    <h3 class="story-title" id="story-title">The Crystal of Eternal Starlight</h3>
+                    <div class="story-content" id="story-content">
+                        <!-- Story content will be inserted here -->
+                    </div>
+                    <div class="story-actions">
+                        <button class="btn-secondary" id="copy-btn">
+                            <i>📋</i> Copy Story
+                        </button>
+                        <button class="btn-secondary" id="new-story-btn">
+                            <i>🔄</i> New Story
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>BrainROT Comics - AI Story Generator | Powered by Advanced Machine Learning</p>
+            <p>© 2023 BrainROT Comics. All stories are AI-generated and for entertainment purposes.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
